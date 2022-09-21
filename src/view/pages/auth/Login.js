@@ -63,7 +63,7 @@ const Login = () => {
       bg={useColorModeValue('gray.50', 'gray.800')}>
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
-          <Heading fontSize={'4xl'}>Login Administrator</Heading>
+          <Heading fontSize={'4xl'}>Log in</Heading>
         </Stack>
         {alert ? 
              <Alert status='error'>
@@ -91,12 +91,12 @@ const Login = () => {
             <Stack spacing={10}>
               
               <Button type='submit'
-                bg={'blue.400'}
+                bg={'orange.400'}
                 color={'white'}
                 _hover={{
-                  bg: 'blue.500',
+                  bg: 'orange.500',
                 }}>
-                Login
+                Log in
               </Button>
             </Stack>
           </Stack>
