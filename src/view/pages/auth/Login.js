@@ -11,16 +11,14 @@ import {
     Button,
     Heading,
     useColorModeValue,
-    Alert,
-    AlertIcon,
-    AlertTitle,
-    AlertDescription,
+    useToast,
   } from '@chakra-ui/react';
 import axios from 'axios';
 import Api from '../../../config/Api'
 
 const Login = () => {
 
+    const toast = useToast()
     const navigate = useNavigate();
     
     const [email, setemail] = useState('')
@@ -49,6 +47,15 @@ const Login = () => {
             
             setemail('')
             setpassword('')
+
+            toast({
+              position:'top',
+              title: 'Error.',
+              description: alertdesc,
+              status: 'error',
+              duration: 4000,
+              isClosable: true,
+            })
           }
 
         
@@ -65,13 +72,6 @@ const Login = () => {
         <Stack align={'center'}>
           <Heading fontSize={'4xl'}>Log in</Heading>
         </Stack>
-        {alert ? 
-             <Alert status='error'>
-             <AlertIcon />
-             <AlertTitle>{alertdesc}</AlertTitle>
-         </Alert>
-        : ''}
-       
         <Box
           rounded={'lg'}
           bg={useColorModeValue('white', 'gray.700')}
